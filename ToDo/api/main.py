@@ -15,12 +15,12 @@ tasks: Dict[int,Task] = {}
 task_id_counter=1
 
 # Listar todas las tareas
-@app.get("/tasks/")
+@app.get("/tasks")
 def get_tasks():
     return tasks
 
 # Crear tarea
-@app.post("/tasks/")
+@app.post("/tasks")
 def create_task(task : Task):
     global task_id_counter
     tasks[task_id_counter] = task   
